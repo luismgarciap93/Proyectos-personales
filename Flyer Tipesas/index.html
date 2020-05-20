@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/9a5342def2.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="styl.css" />
+    <title>Flyer TPS</title>
+  </head>
+  <body>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      .contenedor-flyer {
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        position: absolute;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        max-width: 100%;
+        width: auto;
+        animation-name: modalopen;
+        padding: 17px;
+        z-index: 100;
+      }
+      .contenedor-header {
+        position: relative;
+      }
+      .fas.fa-times {
+        cursor: pointer;
+        position: absolute;
+        right: 5px;
+        top: 2px;
+      }
+      .contenedor-flyer img {
+        width: 800px;
+        height: auto;
+        align-self: center;
+      }
+
+      .contenedor-total {
+        background-color: rgba(0, 0, 0, 0.4);
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+      }
+      .contenedor-total.show-modal {
+        display: block;
+      }
+    </style>
+    <div class="contenedor-total" id="contenedor">
+      <div class="contenedor-flyer" id="modal">
+        <div class="contenedor header">
+          <i class="fas fa-times" id="close-btn"></i>
+        </div>
+        <img
+          src="img/Folleto Insumos Médicos (002).jpg"
+          alt=""
+          height="800"
+          width="1200"
+        />
+      </div>
+    </div>
+    <script>
+      const close = document.getElementById("close-btn");
+      const modal = document.getElementById("modal");
+      const contenedor = document.getElementById("contenedor");
+
+      showModal();
+
+      function showModal() {
+        setTimeout(function () {
+          contenedor.classList.add("show-modal");
+        }, 1000);
+      }
+
+      close.addEventListener("click", () =>
+        contenedor.classList.remove("show-modal")
+      );
+    </script>
+  </body>
+</html>
+<!--  -->
